@@ -1,0 +1,23 @@
+#content-mt {
+    margin-top: 15px;
+}
+
+.cancelar {
+    margin-right: 30px;
+}
+
+button {
+    width: 10em;
+    background-color: var(--cor-primaria);
+
+}
+
+.upload {
+    display: flex;
+}
+
+button,
+span {
+    color: white;
+    font-size: 15px;
+}

@@ -5,7 +5,7 @@ ul, li, a {
 
 .titulo{
     margin-left: 10px;
-    color: var(--cor-principal);
+    color: var(--cor-primaria);
 }
 
 .justify-content-center  {
@@ -32,5 +32,5 @@ ul, li, a {
 }
 
 /* .logar {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-primaria);
 } */

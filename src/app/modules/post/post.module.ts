@@ -9,12 +9,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { PostListComponent } from './post-list/post-list.component';
+import { NovoPostComponent } from './novo-post/novo-post.component';
 
 
 @NgModule({
   declarations: [
     PostComponent,
-    PostListComponent
+    PostListComponent,
+    NovoPostComponent
   ],
   imports: [
     CommonModule,

@@ -1,9 +1,24 @@
 .filtrar {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-primaria);
     color: white;
     width: 15%;
 }
 
 mat-divider {
-    margin: 55px 35px;
+    margin: 45px 35px;
+}
+
+.novo {
+    background-color: var(--cor-terciaria);
+    width: 15em;
+    height: 4em;
+}
+
+.espacoPost {
+    margin-bottom: 55px;
+
+}
+
+a {
+    all: unset
 }

@@ -13,8 +13,9 @@ body {
 :root {
 
     /* cores */
-    --cor-principal: #80297d;
+    --cor-primaria: #80297d;
     --cor-secundaria: #825780;
+    --cor-terciaria: #e5d3e4;
 
     /* cores neutras */
     --color-neutral-dark-down: #8D95AC;

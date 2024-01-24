@@ -1,0 +1,53 @@
+<div class="modal-content container" data-bs-backdrop="static" id="content-mt">
+
+    <form [formGroup]="formPost">
+
+        <div class="row" id="iconDescription">
+
+            <div class="col-12">
+                <mat-label>Texto</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <input matInput name="texto" type="text" formControlName="texto" placeholder="A vida é uma arte">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <mat-label>Link</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <input matInput name="link" formControlName="link" placeholder="www.google.com.br">
+                </mat-form-field>
+            </div>
+
+            <div class="col-4">
+                <mat-label>Imagem</mat-label>
+                <button type="button" mat-raised-button class="upload" (click)="fileInput.click()">Escolher foto</button>
+                <input hidden (change)="onFileSelected()" #fileInput type="file" id="file" formControlName="imagem">
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="action-buttons  mt-4">
+
+                    <button mat-button (click)="criar()">
+                        <span>Criar</span>
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </form>
+
+
+
+</div>
