@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+
+    /* cores */
+    --cor-principal: #80297d;
+    --cor-secundaria: #825780;
+
+    /* cores neutras */
+    --color-neutral-dark-down: #8D95AC;
+
+    /* fontes */
+    --font-size-sm: 14px;
+    --font-size-lg: 16px;
+
+    /* card */
+    --shadow-card: 0 3px 4px 0px rgba(135, 135, 135, 0.6);
+
+    /* FONT WEIGHT */
+    --font-weight-regular: 400;
+
+}
+
+/* CONFIG CARD */
+mat-card-content {
+    margin-top: 10px;
+}
+
+.example-card {
+    box-shadow: var(--shadow-card) !important;
+    margin-bottom: 10px;
+}
+/* FIM CONFIG CARD */
+
+
+/* CONFIG INPUT AND MAT-FORM-FIELD */
+mat-form-field.no-padding .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+}
+
+form mat-form-field.full-width {
+    width: 100%;
+}
+
+form mat-label {
+    color: var(--color-neutral-dark-down);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+}

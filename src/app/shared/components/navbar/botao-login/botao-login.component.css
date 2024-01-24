@@ -1,0 +1,4 @@
+.btnLoginLogout {
+    border: 0.1px solid var(--cor-principal);
+    border-radius: 20%;
+}

@@ -1,0 +1,31 @@
+.row-center {
+    justify-content: center;
+}
+
+mat-divider {
+    margin-top: 5px;
+}
+
+mat-card-actions{
+    margin-top: 15px;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+span, a {
+    font-size: var(--font-size-lg);
+}
+
+.logar {
+    width: 15%;
+    background-color: var(--cor-principal);
+    color: white;
+    font-size: 15px;
+}
+
+::ng-deep .mat-form-field-suffix {
+    align-self: center !important;
+}
+

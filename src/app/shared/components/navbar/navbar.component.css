@@ -1,0 +1,36 @@
+ul, li, a {
+    color: var(--cor-secundaria);
+    font-size: large;
+}
+
+.titulo{
+    margin-left: 10px;
+    color: var(--cor-principal);
+}
+
+.justify-content-center  {
+    width: 100%;
+}
+
+.logins {
+    display: contents;
+}
+
+.cadastrar {
+    margin-right: 35px;
+}
+
+@media only screen and (max-width: 768px) {
+    .justify-content-center {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: start !important;
+    }
+    .logins {
+        display: flex;
+    }
+}
+
+/* .logar {
+    background-color: var(--cor-principal);
+} */
