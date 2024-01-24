@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { PostListComponent } from './post-list/post-list.component';
 import { NovoPostComponent } from './novo-post/novo-post.component';
@@ -26,7 +27,8 @@ import { NovoPostComponent } from './novo-post/novo-post.component';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ]
 })
 export class PostModule { }

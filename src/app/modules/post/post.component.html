@@ -61,4 +61,10 @@
 
 <mat-divider></mat-divider>
 
-<app-post-list></app-post-list>
+<!-- <div *ngIf="posts.length"> -->
+    <app-post-list [listaPost]="posts"></app-post-list>
+<!-- </div> -->
+
+<!-- <div *ngIf="!posts.length "> -->
+    Sem posts cadastrados
+<!-- </div> -->

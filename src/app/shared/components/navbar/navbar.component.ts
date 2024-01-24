@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  logado: boolean;
+  logado: boolean = true;
 
 }

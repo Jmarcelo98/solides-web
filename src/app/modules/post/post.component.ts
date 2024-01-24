@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/core/models/Post';
+import { PostService } from 'src/app/shared/services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -10,10 +11,10 @@ import { Post } from 'src/app/core/models/Post';
 })
 export class PostComponent implements OnInit {
 
-  post: Post[] = [];
+  posts: Post[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.post = this.activatedRoute.snapshot.data.postResolve as Post[];
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
+    this.posts = this.activatedRoute.snapshot.data.postResolve as Post[];
   }
 
 
@@ -28,6 +29,16 @@ export class PostComponent implements OnInit {
   }
 
   filtrar() {
+
+    this.postService.buscarTodos(this.formFiltro.getRawValue()).subscribe(res => {
+      console.log(res);
+
+      // this.posts = res
+
+    }, err => {
+      console.log(err);
+
+    })
 
   }
 

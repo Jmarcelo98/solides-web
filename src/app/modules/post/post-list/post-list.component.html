@@ -1,1 +1,38 @@
-<p>post-list works!</p>
+<div class="page-container" id="type-income-list">
+
+    <div class="row">
+
+        <div class="col-12">
+
+            <table mat-table [dataSource]="listaPost" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="texto">
+                    <th mat-header-cell *matHeaderCellDef>Description</th>
+                    <td mat-cell *matCellDef="let element"> {{element.texto}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="link">
+                    <th mat-header-cell *matHeaderCellDef>Description</th>
+                    <td mat-cell *matCellDef="let element"> {{element.link}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+                <ng-container matColumnDef="acao">
+                    <th mat-header-cell *matHeaderCellDef>Delete</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-button (click)="deletar(element.id)">
+                            <i class="fi fi-rr-trash"></i>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>

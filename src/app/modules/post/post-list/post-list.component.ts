@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Post } from 'src/app/core/models/Post';
 
 @Component({
   selector: 'app-post-list',
@@ -8,6 +9,12 @@ import { Component, Input } from '@angular/core';
 export class PostListComponent {
 
   @Input()
-  listaPost: [] = []
+  listaPost: Post[] = []
+
+  public displayedColumns: string[] = ['texto', 'link', 'acao'];
+
+  deletar(id: number) {
+
+  }
 
 }

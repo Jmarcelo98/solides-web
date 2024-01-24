@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.botaoPerfil {
+    border: 0.1px solid var(--cor-primaria);
+    border-radius: 20%;
+}

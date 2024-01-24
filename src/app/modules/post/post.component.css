@@ -1,6 +1,6 @@
 .filtrar {
     background-color: var(--cor-primaria);
-    color: white;
+    color: whitesmoke !important;
     width: 15%;
 }
 

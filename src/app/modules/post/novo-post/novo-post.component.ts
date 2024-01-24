@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PostService } from 'src/app/shared/services/post.service';
 
 @Component({
   selector: 'app-novo-post',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class NovoPostComponent {
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   formPost = new FormGroup({
     id: new FormControl(null),
@@ -18,31 +19,25 @@ export class NovoPostComponent {
   });
 
   onFileSelected() {
-    
+
   }
 
   criar() {
 
     if (this.formPost.valid) {
 
-      //   this.customerService.create(this.formCustomer.getRawValue()).subscribe(suc => {
-      //     this.openSnackBar("Cliente cadastrado com sucesso", this.configSuccess);
-      //     this.dialogRef.close()
+      this.postService.criar(this.formPost.getRawValue()).subscribe( res => {
 
-      //     setTimeout(() => {
-      //       window.location.reload();
-      //     }, 3000);
+        console.log(res);
+        
 
-      //   }, err => {
-      //     console.log(err);
-      //   })
-
-      // } else {
-      //   this.validaCampos(this.formCustomer)
-      // }
-
-    }
+      }, err => {
+        console.log(err);
+        
+      } )
 
   }
+
+}
 
 }
