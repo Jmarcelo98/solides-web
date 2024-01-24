@@ -1,0 +1,52 @@
+<div class="row">
+
+    <h2>FILTRAR POST</h2>
+
+    <form [formGroup]="formFiltro">
+
+        <div class="row">
+
+            <div class="col-md-5 col-12">
+                <mat-label>Texto</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <i matPrefix class="fi fi-rr-envelope mr"></i>
+                    <input matInput name="texto" formControlName="texto" placeholder="Ex. A vila é bela">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-5 col-12">
+                <mat-label>Link</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <i matPrefix class="fi fi-rr-envelope mr"></i>
+                    <input matInput name="link" formControlName="link" placeholder="Ex. www.google.com">
+                </mat-form-field>
+            </div>
+
+
+            <div class="col-md-2 col-6">
+                <mat-label>Id</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <i matPrefix class="fi fi-rr-envelope mr"></i>
+                    <input matInput name="id" formControlName="id" placeholder="Ex. 1">
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <button mat-button class="filtrar" (click)="filtrar()"><i class="fi fi-rr-check"></i>Filtrar</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<mat-divider></mat-divider>
+
+<app-post-list></app-post-list>

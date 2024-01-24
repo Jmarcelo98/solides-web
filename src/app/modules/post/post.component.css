@@ -1,0 +1,9 @@
+.filtrar {
+    background-color: var(--cor-principal);
+    color: white;
+    width: 15%;
+}
+
+mat-divider {
+    margin: 55px 35px;
+}

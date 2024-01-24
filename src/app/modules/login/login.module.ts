@@ -22,11 +22,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatFormFieldModule,
     MatCardModule,
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
-    MatFormFieldModule,
   ]
 })
 export class LoginModule { }

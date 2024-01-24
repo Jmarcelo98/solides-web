@@ -8,14 +8,12 @@ function tokenGetter() {
     return tokenStorage.getToken();
 }
 
-
 export const jwtConfig: JwtModuleOptions = {
     config: {
         tokenGetter: tokenGetter,
         allowedDomains: [environment.apiUrl],
         disallowedRoutes: [
-            `${environment.apiUrl}/autenticar/login`,
-            `${environment.apiUrl}/autenticar/cadastrar`,
+            `${environment.apiUrl}/login`,
             `${environment.apiUrl}/album/todos`,
         ],
     },
