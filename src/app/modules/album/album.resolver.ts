@@ -20,7 +20,7 @@ export class AlbumResolver implements Resolve<Album[]> {
   paginator: Paginator = {
     pageIndex: 0,
     totalElements: 0,
-    pageSize: 6,
+    pageSize: 4,
   }
 
   formFiltro = new FormGroup({

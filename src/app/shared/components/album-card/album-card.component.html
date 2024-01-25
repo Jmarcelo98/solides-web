@@ -1,11 +1,19 @@
-<mat-card class="example-card">
+<a [href]="['album/' + album.id]" title="Acessar Álbum">
 
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card class="example-card">
 
-  <mat-card-content>
-    <div>
-      <span>{{album.titulo}}</span>
-    </div>
-  </mat-card-content>
+    <img *ngIf="image != undefined" [src]="image">
 
-</mat-card>
+    <img *ngIf="image == undefined" src="../../../../assets/img/teste.jpg">
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <div>
+        <span>{{album.titulo}}</span>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+
+</a>

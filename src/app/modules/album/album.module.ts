@@ -13,13 +13,15 @@ import { NovoAlbumComponent } from './novo-album/novo-album.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { AlbumVisualizarComponent } from './album-visualizar/album-visualizar.component';
 
 
 @NgModule({
   declarations: [
     AlbumComponent,
     AlbumListComponent,
-    NovoAlbumComponent
+    NovoAlbumComponent,
+    AlbumVisualizarComponent
   ],
   imports: [
     CommonModule,

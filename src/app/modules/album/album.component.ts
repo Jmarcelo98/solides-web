@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Paginator } from 'src/app/core/models/interface/Paginator';
 import { IPaginator } from 'src/app/shared/components/paginacao/paginacao.component';
@@ -9,11 +9,13 @@ import { AlbumService } from 'src/app/shared/services/album.service';
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.css']
 })
-export class AlbumComponent {
+export class AlbumComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) {
     this.albuns = this.activatedRoute.snapshot.data.albumResolver;
+    console.log(this.albuns);
+
   }
 
   albuns: any
@@ -21,7 +23,12 @@ export class AlbumComponent {
   paginator: Paginator = {
     pageIndex: 0,
     totalElements: 0,
-    pageSize: 5,
+    pageSize: 4,
+  }
+
+  ngOnInit(): void {
+    this.paginator.pageIndex = this.albuns.number;
+    this.paginator.totalElements = this.albuns.totalElements;
   }
 
   buscarTodos() {
@@ -37,7 +44,7 @@ export class AlbumComponent {
   }
 
   public pageClick(paginator?: IPaginator) {
-    this.paginator = paginator!;
+    this.paginator = paginator!
     this.buscarTodos();
   }
 

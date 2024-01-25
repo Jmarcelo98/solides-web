@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlbumCardComponent } from './album-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { MatCardModule } from '@angular/material/card';
   exports: [AlbumCardComponent],
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ]
 })
 export class AlbumCardModule { }

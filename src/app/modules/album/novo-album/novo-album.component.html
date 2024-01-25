@@ -32,10 +32,17 @@
                 <button title="Atualizar foto" class="upload" mat-button (click)="fileInput.click()">
                     <input type="file" class="form-control" id="foto" #fileInput
                         (change)="uploadProfilePicture($event, i)">
+
+                    <mat-error *ngIf="primeiraPosicaoNull">Campo obrigatório</mat-error>
+
+                    <mat-error *ngIf="formArrayFotos.controls[i].get('imagem')?.hasError('required')">
+                        Campo obrigatório</mat-error>
+
                 </button>
 
                 <button *ngIf="i > 0" type="button" (click)="removerFoto(i)" class="btn removerFoto"
                     title="Remover foto">X</button>
+
 
             </div>
 

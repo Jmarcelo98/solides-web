@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlbumService } from 'src/app/shared/services/album.service';
 
 @Component({
@@ -11,7 +12,9 @@ export class NovoAlbumComponent implements OnInit {
 
   formAlbum: FormGroup;
 
-  constructor(private fb: FormBuilder, private albumService: AlbumService) { }
+  primeiraPosicaoNull = false
+
+  constructor(private fb: FormBuilder, private albumService: AlbumService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -40,6 +43,15 @@ export class NovoAlbumComponent implements OnInit {
 
   }
 
+  primeiraPosicaoNula() {
+
+    if (this.formArrayFotos.at(0)?.value?.imagem?.errors?.required) {
+      this.primeiraPosicaoNull = true;
+    } else {
+      this.primeiraPosicaoNull = false;
+    }
+  }
+
   removerFoto(index: number) {
     this.formArrayFotos.removeAt(index);
   }
@@ -47,11 +59,6 @@ export class NovoAlbumComponent implements OnInit {
   get formArrayFotos() {
     return this.formAlbum.get('fotos') as FormArray;
   }
-
-  get arrayForm() {
-    return this.formAlbum.controls["fotos"] as FormArray;
-  }
-
 
   uploadProfilePicture(event: any, i: number) {
 
@@ -74,18 +81,13 @@ export class NovoAlbumComponent implements OnInit {
 
   criar() {
 
-    console.log(this.formAlbum.getRawValue());
+    this.primeiraPosicaoNula();
 
-    // this.formAlbum.valid
-
-    if (false) {
+    if (this.formAlbum.valid && !this.primeiraPosicaoNull) {
 
       this.albumService.criar(this.formAlbum.getRawValue()).subscribe(res => {
 
-
-          console.log(res);
-          
-        // this.route.navigate(['post', res])
+        this.route.navigate(['album', res])
 
       }, err => {
         console.log(err);

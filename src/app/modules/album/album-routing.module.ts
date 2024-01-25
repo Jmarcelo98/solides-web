@@ -4,6 +4,7 @@ import { AlbumComponent } from './album.component';
 import { AlbumResolver } from './album.resolver';
 import { NovoAlbumComponent } from './novo-album/novo-album.component';
 import { AuthGuardService } from 'src/app/core/auth/can-active.service';
+import { AlbumVisualizarComponent } from './album-visualizar/album-visualizar.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'novo',
     component: NovoAlbumComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: ':id',
+    component: AlbumVisualizarComponent,
     canActivate: [AuthGuardService]
   }
 ];
