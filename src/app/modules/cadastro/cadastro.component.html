@@ -1,0 +1,91 @@
+<div class="row row-center">
+
+    <div class="col-12 col-md-10">
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>Cadastro</mat-card-title>
+                </mat-card-title-group>
+            </mat-card-header>
+
+            <mat-card-content>
+
+                <form [formGroup]="formRegister">
+
+                    <div class="row">
+
+                        <div class="col-12 col-md-12 col-lg-5">
+                            <mat-label>Login</mat-label>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <i matPrefix class="fi fi-rr-envelope mr"></i>
+                                <input matInput name="login" formControlName="login" placeholder="Ex. joao">
+                                <mat-error *ngIf="formRegister.get('login')?.hasError('required')">Campo
+                                    obrigatório</mat-error>
+                                <mat-error *ngIf="formRegister.get('login')?.hasError('minlength')">É obrigatório no
+                                    mínimo 4 caracteres</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-3 ">
+                            <mat-label>Senha</mat-label>
+                            <mat-form-field class="full-width" appearance="outline">
+
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <input matInput [type]="hide ? 'password' : 'text' " formControlName="senha">
+                                <mat-error *ngIf="formRegister.get('senha')?.hasError('required')">Campo
+                                    obrigatório</mat-error>
+                                <mat-error *ngIf="formRegister.get('senha')?.hasError('minlength')">É obrigatório no
+                                    mínimo
+                                    4 caracteres</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-3 ">
+                            <mat-label>Confirmar senha</mat-label>
+                            <mat-form-field class="full-width" appearance="outline">
+
+                                <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm"
+                                    [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="hideConfirm">
+                                    <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+
+                                <input matInput [type]="hideConfirm ? 'password' : 'text' "
+                                    formControlName="confirmarSenha">
+                                <mat-error *ngIf="formRegister.get('confirmarSenha')?.hasError('required')">Campo
+                                    obrigatório
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="formRegister.get('confirmarSenha')?.hasError('nonIdenticalPassword')">As
+                                    senhas não conferem</mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12 mt-4">
+
+                            <button mat-button class="cadastro" (click)="cadastrar()">
+                                <i class="fi fi-rr-check"> </i>Cadastrar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+
+            </mat-card-content>
+
+        </mat-card>
+
+    </div>
+
+</div>

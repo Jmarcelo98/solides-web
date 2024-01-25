@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'album',
     loadChildren: () => import('./modules/album/album.module').then(m => m.AlbumModule),
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./modules/cadastro/cadastro.module').then(m => m.CadastroModule),
   }
 ];
 

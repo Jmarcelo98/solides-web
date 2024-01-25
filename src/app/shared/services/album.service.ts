@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AlbumService extends BaseService {
   
   constructor(private http: HttpClient) {
-    super("album");
+    super("albuns");
   }
 
   buscarTodos() {
