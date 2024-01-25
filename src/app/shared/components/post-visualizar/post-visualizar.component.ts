@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { ConfirmacaoDialogComponent } from '../confirmacao-dialog/confirmacao-dialog.component';
 import { TokenStorageService } from 'src/app/core/auth/token-storage.service';

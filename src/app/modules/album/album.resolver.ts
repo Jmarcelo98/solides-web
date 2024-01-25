@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
-  Router, Resolve,
+  Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Album } from 'src/app/core/models/interface/Album';
 import { Paginator } from 'src/app/core/models/interface/Paginator';
-import { Post } from 'src/app/core/models/interface/Post';
 import { AlbumService } from 'src/app/shared/services/album.service';
-import { PostService } from 'src/app/shared/services/post.service';
 
 @Injectable({
   providedIn: 'root'

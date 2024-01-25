@@ -8,7 +8,6 @@ import { ComentarioModule } from '../comentario/comentario.module';
 import { MatButtonModule } from '@angular/material/button';
 
 
-
 @NgModule({
   declarations: [PostVisualizarComponent],
   exports: [PostVisualizarComponent],
