@@ -18,9 +18,33 @@ export class NovoPostComponent {
     imagem: new FormControl(null, [])
   });
 
+  image: any
+
+
   onFileSelected() {
 
   }
+
+  uploadProfilePicture(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0] as File;
+      const reader = new FileReader()
+      reader.onload = (e: any) => {
+
+        const bytes = e.target.result.split('base64,')[1]
+        this.formPost.controls['imagem'].setValue(bytes)
+        // this.updateProfilePictureView()
+      }
+
+      reader.readAsDataURL(file)
+
+    }
+  }
+
+  // async updateProfilePictureView() {
+  //   this.user.profilePicture = this.formUpdate.get('profilePicture')?.value
+  //   await this.updateImageInForm()
+  // }
 
   criar() {
 
@@ -29,7 +53,6 @@ export class NovoPostComponent {
       this.postService.criar(this.formPost.getRawValue()).subscribe(res => {
 
         this.route.navigate(['post', res])
-
 
       }, err => {
         console.log(err);

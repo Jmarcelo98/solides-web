@@ -35,6 +35,14 @@ a {
     margin-left: 1px;
 }
 
+img {
+    width: 400px;
+}
+
+.img {
+    align-self: center;
+}
+
 @media only screen and (max-width: 768px) {
     .example-card {
         width: 100%;
