@@ -22,3 +22,7 @@ mat-divider {
 a {
     all: unset
 }
+
+#finalPagina{
+    height: 60px;
+}
