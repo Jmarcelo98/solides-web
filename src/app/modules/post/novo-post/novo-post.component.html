@@ -1,6 +1,6 @@
 <div class="modal-content container" data-bs-backdrop="static" id="content-mt">
 
-    <form [formGroup]="formPost">
+    <form [formGroup]="formPost" (submit)="criar()">
 
         <div class="row" id="iconDescription">
 
@@ -22,7 +22,8 @@
 
             <div class="col-4">
                 <mat-label>Imagem</mat-label>
-                <button type="button" mat-raised-button class="upload" (click)="fileInput.click()">Escolher foto</button>
+                <button type="button" mat-raised-button class="upload" (click)="fileInput.click()">Escolher
+                    foto</button>
                 <input hidden (change)="onFileSelected()" #fileInput type="file" id="file" formControlName="imagem">
             </div>
 
@@ -35,7 +36,7 @@
 
                 <div class="action-buttons  mt-4">
 
-                    <button mat-button (click)="criar()">
+                    <button mat-button type="submit">
                         <span>Criar</span>
                     </button>
 

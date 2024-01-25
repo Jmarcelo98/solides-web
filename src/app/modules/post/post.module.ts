@@ -13,13 +13,17 @@ import { PostListComponent } from './post-list/post-list.component';
 import { NovoPostComponent } from './novo-post/novo-post.component';
 import { PaginacaoModule } from 'src/app/shared/components/paginacao/paginacao.module';
 import { MatIconModule } from '@angular/material/icon';
+import { VisualizarPostComponent } from './visualizar-post/visualizar-post.component';
+import { MatCardModule } from '@angular/material/card';
+import { ComentarioModule } from 'src/app/shared/components/comentario/comentario.module';
 
 
 @NgModule({
   declarations: [
     PostComponent,
     PostListComponent,
-    NovoPostComponent
+    NovoPostComponent,
+    VisualizarPostComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatDividerModule,
     MatTableModule,
     PaginacaoModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    ComentarioModule
   ]
 })
 export class PostModule { }

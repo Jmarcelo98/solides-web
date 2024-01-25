@@ -19,7 +19,11 @@ export class PostService extends BaseService {
   }
 
   criar(form: any) {
-    return this.http.post(`${this.endPoint}`, form);
+    return this.http.post<any>(`${this.endPoint}`, form);
+  }
+
+  buscarPorId(id: number): Observable<any> {
+    return this.http.get<any>(`${this.endPoint}/${id}`);
   }
 
 }

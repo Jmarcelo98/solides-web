@@ -32,8 +32,6 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.posts);
-
     this.paginator.pageIndex = this.posts.number;
     this.paginator.totalElements = this.posts.totalElements;
   }

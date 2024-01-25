@@ -21,7 +21,7 @@
                 <ng-container matColumnDef="acao">
                     <th mat-header-cell *matHeaderCellDef>Ação</th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-button (click)="visualizar(element.id)" title="Visualizar Post">
+                        <button mat-button [routerLink]="element.id" title="Visualizar Post">
                             <mat-icon>keyboard_arrow_right</mat-icon>
                         </button>
                         <!-- <button mat-button (click)="deletar(element.id)">

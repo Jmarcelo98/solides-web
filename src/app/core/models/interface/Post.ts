@@ -3,4 +3,6 @@ export interface Post {
     texto: string;
     link: string;
     image: any;
+    usuario: any;
+    comentarios: any
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/core/models/interface/Post';
 
 @Component({
@@ -8,6 +9,8 @@ import { Post } from 'src/app/core/models/interface/Post';
 })
 export class PostListComponent {
 
+  constructor(private route: Router) { }
+
   @Input()
   listaPost: Post[] = []
 
@@ -15,10 +18,6 @@ export class PostListComponent {
 
   deletar(id: number) {
 
-  }
-
-  visualizar(id: number) {
-    
   }
 
 }

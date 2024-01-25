@@ -1,0 +1,29 @@
+.border {
+    border: solid 1px;
+    width: 100%;
+}
+
+.corpoComentario{
+    background-color: #fbfafa70;
+}
+
+.comentario {
+    margin-left: 2px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+}
+
+.dataCriacao {
+    font-family: cursive;
+    text-align: right;
+}
+
+.deletar {
+    text-align: right;
+    margin-top: -7px;
+}
+
+p {
+    font-style: italic;
+    margin-bottom: 0px;
+}

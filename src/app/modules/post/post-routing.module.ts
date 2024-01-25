@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PostComponent } from './post.component';
 import { PostResolver } from './post.resolver';
 import { NovoPostComponent } from './novo-post/novo-post.component';
+import { VisualizarPostComponent } from './visualizar-post/visualizar-post.component';
+import { VisualizarPostResolver } from './visualizar-post/visualizar-post.resolver';
 
 const routes: Routes = [
   {
@@ -15,7 +17,14 @@ const routes: Routes = [
   {
     path: 'novo',
     component: NovoPostComponent
-  }
+  },
+  {
+    path: ':id',
+    component: VisualizarPostComponent,
+    resolve: {
+      visualizarPostResolver: VisualizarPostResolver
+    }
+  },
 
 ];
 

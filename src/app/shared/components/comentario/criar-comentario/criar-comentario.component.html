@@ -1,0 +1,34 @@
+<h3>Criar comentário</h3>
+
+<form [formGroup]="comentarioForm" (submit)="criarComentario()">
+
+    <div class="row">
+
+        <div class="col-md-10 col-12">
+
+            <mat-label>Comentário</mat-label>
+
+            <mat-form-field class="full-width" appearance="outline">
+
+                <input matInput name="comentario" formControlName="comentario" placeholder="Digite seu comentário">
+
+                <mat-error *ngIf="comentarioForm.get('comentario')?.hasError('required')" validate
+                    controlName="comentario">
+                    Comentário é obrigatório</mat-error>
+                <mat-error *ngIf="comentarioForm.get('comentario')?.hasError('minlength')" validate
+                    controlName="comentario">
+                    Comentário deverá conter no mínimo 3 caracteres</mat-error>
+
+            </mat-form-field>
+
+        </div>
+
+        <div class="col-md-2 col-8 posicaoBotao">
+
+            <button mat-button class="criar" type="submit">Criar</button>
+
+        </div>
+
+    </div>
+
+</form>

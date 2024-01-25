@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post.service';
 
 @Component({
@@ -9,10 +10,9 @@ import { PostService } from 'src/app/shared/services/post.service';
 })
 export class NovoPostComponent {
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private route: Router) { }
 
   formPost = new FormGroup({
-    id: new FormControl(null),
     texto: new FormControl(null, [Validators.required]),
     link: new FormControl(null, []),
     imagem: new FormControl(null, [])
@@ -26,18 +26,18 @@ export class NovoPostComponent {
 
     if (this.formPost.valid) {
 
-      this.postService.criar(this.formPost.getRawValue()).subscribe( res => {
+      this.postService.criar(this.formPost.getRawValue()).subscribe(res => {
 
-        console.log(res);
-        
+        this.route.navigate(['post', res])
+
 
       }, err => {
         console.log(err);
-        
-      } )
+
+      })
+
+    }
 
   }
-
-}
 
 }

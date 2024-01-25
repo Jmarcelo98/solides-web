@@ -1,0 +1,35 @@
+<app-criar-comentario [post]="post"></app-criar-comentario>
+
+<p>Comentários</p>
+
+<div class="border corpoComentario" *ngFor="let item of post.comentarios">
+
+    <div class="row">
+
+        <div class="col-12 mt-1">
+            <app-usuario-comentario [usuario]="item.usuario"></app-usuario-comentario>
+        </div>
+
+    </div>
+
+    <div class="row mt-2 comentario">
+
+        <div class="col-md-9 col-7">
+            {{item.comentario}}
+        </div>
+
+        <div class="col-md-2 col-3 dataCriacao ">
+            {{item.dataCriacao | date: 'dd/MM/yy'}}
+        </div>
+
+        <div class="col-md-1 col-1 ">
+            <button mat-button class="deletar" (click)="deletar(item.id)" title="Excluir comentário">
+                <mat-icon>delete_outline</mat-icon>
+            </button>
+        </div>
+
+
+
+    </div>
+
+</div>
