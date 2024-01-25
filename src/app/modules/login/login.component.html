@@ -11,15 +11,19 @@
 
             <mat-card-content>
 
-                <form [formGroup]="formLogin">
+                <form [formGroup]="formLogin" (submit)="logar()">
 
                     <div class="row">
 
                         <div class="col-12 col-md-7 col-lg-6">
                             <mat-label>Usuário</mat-label>
-                            <mat-form-field class="full-width" appearance="outline">
+                            <mat-form-field class="full-width form-field" appearance="outline">
                                 <i matPrefix class="fi fi-rr-envelope mr"></i>
                                 <input matInput name="login" formControlName="login" placeholder="Ex. joao">
+                                <mat-error *ngIf="formLogin.get('login')?.hasError('required')">Campo
+                                    obrigatório</mat-error>
+                                <mat-error *ngIf="formLogin.get('login')?.hasError('minlength')">É obrigatório no mínimo
+                                    4 caracteres</mat-error>
                             </mat-form-field>
                         </div>
 
@@ -33,17 +37,20 @@
                                 </button>
 
                                 <input matInput [type]="hide ? 'password' : 'text' " formControlName="senha">
+                                <mat-error *ngIf="formLogin.get('senha')?.hasError('required')">Campo
+                                    obrigatório</mat-error>
+                                <mat-error *ngIf="formLogin.get('senha')?.hasError('minlength')">É obrigatório no mínimo
+                                    4 caracteres</mat-error>
                             </mat-form-field>
                         </div>
 
                     </div>
 
-                    <div class="row">
+                    <div class="row mt-4">
 
                         <div class="col-12">
 
-                            <button mat-button class="logar" (click)="logar()"><i
-                                    class="fi fi-rr-check"></i>Logar</button>
+                            <button mat-button class="logar" type="submit"><i class="fi fi-rr-check"></i>Logar</button>
 
                         </div>
 

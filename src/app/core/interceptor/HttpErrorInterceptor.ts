@@ -24,12 +24,16 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 if (error.status === 400) {
                     // Implemente sua msg amigável
                     this.snackBar.open(error.error.description, "X", this.configError);
-                } 
+                }
+
+                else if ((error.status === 403 || error.status === 404) && error.url == "http://localhost:8080/login") {
+                    this.snackBar.open("Usuário ou senha incorreto!", "X", this.configError);
+                }
 
                 else if (error.status === 404) {
                     // Implemente sua msg amigável
                     this.snackBar.open(error.error.description, "X", this.configError);
-                } 
+                }
 
 
                 return throwError(error);

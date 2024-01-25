@@ -34,6 +34,9 @@ export class BotaoPerfilComponent {
 
   logout() {
     this.tokenService.logout();
+    this.route.navigate(['/login']).then(() => {
+      window.location.reload()
+    })
   }
 
 }

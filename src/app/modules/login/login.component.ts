@@ -15,21 +15,22 @@ export class LoginComponent {
     private route: Router) { }
 
   formLogin = new FormGroup({
-    login: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+    login: new FormControl(null, [Validators.required, Validators.minLength(4)]),
     senha: new FormControl(null, [Validators.required, Validators.minLength(3)]),
   });
 
-  hide: boolean = true;
+  hide = true;
 
   logar() {
 
     if (this.formLogin.valid) {
 
       this.autenticarService.logar(this.formLogin.getRawValue()).subscribe(res => {
-        console.log(res);
 
-        // this.tokeService.saveToken(res)
-        // this.route.navigate([''])
+        this.tokeService.saveToken(res)
+        this.route.navigate(['']).then(() => {
+          window.location.reload()
+        })
 
       }, err => {
         console.log(err);
