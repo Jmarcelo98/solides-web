@@ -18,4 +18,8 @@ export class AlbumService extends BaseService {
     return this.http.get<any>(`${this.endPoint}/todos`, { params: params });
   }
 
+  criar(form: any) {
+    return this.http.post(`${this.endPoint}`, form);
+  }
+
 }

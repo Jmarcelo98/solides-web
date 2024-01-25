@@ -1,0 +1,27 @@
+#content-mt {
+    margin-top: 15px;
+}
+
+.cancelar {
+    margin-right: 30px;
+}
+
+.criar {
+    width: 10em;
+    background-color: var(--cor-primaria);
+}
+
+.removerFoto {
+    display: contents;
+    color: black;
+}
+
+.upload {
+    margin-top: 20px;
+}
+
+button,
+span {
+    color: white;
+    font-size: 15px;
+}

@@ -41,11 +41,6 @@ export class NovoPostComponent {
     }
   }
 
-  // async updateProfilePictureView() {
-  //   this.user.profilePicture = this.formUpdate.get('profilePicture')?.value
-  //   await this.updateImageInForm()
-  // }
-
   criar() {
 
     if (this.formPost.valid) {

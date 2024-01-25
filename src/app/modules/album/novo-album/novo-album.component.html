@@ -1,1 +1,66 @@
-<p>novo-album works!</p>
+<div class="modal-content container" data-bs-backdrop="static" id="content-mt">
+
+    <h2>Criar Álbum</h2>
+
+    <form [formGroup]="formAlbum" (submit)="criar()">
+
+        <div class="row" id="iconDescription">
+
+            <div class="col-12">
+                <mat-label>Titulo</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <input matInput name="titulo" type="text" formControlName="titulo" placeholder="A vida é uma arte">
+                    <mat-error *ngIf="formAlbum.get('titulo')?.hasError('required')">Campo
+                        obrigatório</mat-error>
+                </mat-form-field>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button mat-button type="button" (click)="maisFoto()">
+                    Adicionar mais fotos
+                </button>
+            </div>
+        </div>
+
+        <div class="row mt-3" formArrayName="fotos">
+
+            <div class="col-4" *ngFor="let item of formArrayFotos.controls; let i = index">
+                <mat-label>Imagem</mat-label>
+                <button title="Atualizar foto" class="upload" mat-button (click)="fileInput.click()">
+                    <input type="file" class="form-control" id="foto" #fileInput
+                        (change)="uploadProfilePicture($event, i)">
+                </button>
+
+                <button *ngIf="i > 0" type="button" (click)="removerFoto(i)" class="btn removerFoto"
+                    title="Remover foto">X</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="action-buttons  mt-4">
+
+                    <button mat-button class="criar" type="submit">
+                        <span>Criar</span>
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </form>
+
+
+
+</div>
