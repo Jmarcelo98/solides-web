@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: PostComponent,
     resolve: {
-      // postResolve: PostResolver
+      postResolve: PostResolver
     }
   },
   {

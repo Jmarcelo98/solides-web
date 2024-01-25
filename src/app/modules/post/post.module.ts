@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { PostListComponent } from './post-list/post-list.component';
 import { NovoPostComponent } from './novo-post/novo-post.component';
+import { PaginacaoModule } from 'src/app/shared/components/paginacao/paginacao.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { NovoPostComponent } from './novo-post/novo-post.component';
     MatFormFieldModule,
     MatButtonModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    PaginacaoModule,
+    MatIconModule
   ]
 })
 export class PostModule { }

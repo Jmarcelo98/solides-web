@@ -61,10 +61,12 @@
 
 <mat-divider></mat-divider>
 
-<!-- <div *ngIf="posts.length"> -->
-    <app-post-list [listaPost]="posts"></app-post-list>
-<!-- </div> -->
+<div *ngIf="posts.content.length">
+    <app-post-list [listaPost]="posts?.content"></app-post-list>
+    <app-paginacao (page)="pageClick($event)" [pageIndex]="paginator.pageIndex" [pageSize]="paginator.pageSize"
+        [totalElements]="paginator.totalElements!"></app-paginacao>
+</div>
 
-<!-- <div *ngIf="!posts.length "> -->
+<div *ngIf="!posts.content.length ">
     Sem posts cadastrados
-<!-- </div> -->
+</div>

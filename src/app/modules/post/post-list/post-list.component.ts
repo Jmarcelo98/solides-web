@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Post } from 'src/app/core/models/Post';
+import { Post } from 'src/app/core/models/interface/Post';
 
 @Component({
   selector: 'app-post-list',
@@ -15,6 +15,10 @@ export class PostListComponent {
 
   deletar(id: number) {
 
+  }
+
+  visualizar(id: number) {
+    
   }
 
 }

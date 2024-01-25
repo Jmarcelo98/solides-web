@@ -16,7 +16,7 @@ export class LoginComponent {
 
   formLogin = new FormGroup({
     login: new FormControl(null, [Validators.required, Validators.minLength(4)]),
-    senha: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+    senha: new FormControl(null, [Validators.required, Validators.minLength(4)]),
   });
 
   hide = true;

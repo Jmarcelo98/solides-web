@@ -1,5 +1,6 @@
 // import { HttpParams } from "@angular/common/http";
 import { HttpParams } from "@angular/common/http";
+import { Paginator } from "src/app/core/models/interface/Paginator";
 // import { Paginator } from "src/app/core/Paginator";
 import { environment } from "src/environments/environment";
 
@@ -59,11 +60,11 @@ export class BaseService {
 
     }
 
-    // setPageToHttpParam(page: Paginator): HttpParams {
-    //     var params = new HttpParams()
-    //         .set('page', page ? page.pageIndex.toString() : '0')
-    //         .set('size', page ? page.pageSize.toString() : '5')
-    //     return params;
-    // }
+    setPageToHttpParam(page: Paginator): HttpParams {
+        var params = new HttpParams()
+            .set('page', page ? page.pageIndex.toString() : '0')
+            .set('size', page ? page.pageSize.toString() : '5')
+        return params;
+    }
 
 }
