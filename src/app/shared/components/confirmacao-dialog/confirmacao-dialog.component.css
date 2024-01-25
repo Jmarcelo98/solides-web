@@ -1,0 +1,39 @@
+#content-mt {
+    margin-top: 15px;
+}
+
+#confirm-dialog .header {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 8px 24px;
+    align-items: center;
+}
+
+#confirm-dialog .text {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+
+#confirm-dialog .header button {
+    color: white;
+}
+
+#confirm-dialog .icon-close {
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#confirm-dialog .action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-secondary {
+    margin-left: 15px;
+}
+
+.btn-primary {
+    margin-right: 15px;
+}

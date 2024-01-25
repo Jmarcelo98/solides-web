@@ -15,4 +15,8 @@ export class ComentarioService extends BaseService {
     return this.http.post(`${this.endPoint}`, form);
   }
 
+  deletar(id: number) {
+    return this.http.delete(`${this.endPoint}/${id}`);
+  }
+
 }

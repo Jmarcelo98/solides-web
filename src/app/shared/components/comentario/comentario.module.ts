@@ -8,6 +8,7 @@ import { CriarComentarioComponent } from './criar-comentario/criar-comentario.co
 import { UsuarioComentarioComponent } from './usuario-comentario/usuario-comentario.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -27,7 +28,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class ComentarioModule { }

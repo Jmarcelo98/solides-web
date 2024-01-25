@@ -22,13 +22,11 @@
             {{item.dataCriacao | date: 'dd/MM/yy'}}
         </div>
 
-        <div class="col-md-1 col-1 ">
+        <div class="col-md-1 col-1 " *ngIf="idUsuario === item.usuario.id">
             <button mat-button class="deletar" (click)="deletar(item.id)" title="Excluir comentário">
                 <mat-icon>delete_outline</mat-icon>
             </button>
         </div>
-
-
 
     </div>
 
