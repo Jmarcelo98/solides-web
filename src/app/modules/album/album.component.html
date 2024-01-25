@@ -1,1 +1,25 @@
-<p>album works!</p>
+<div class="row espacoAlbum">
+
+    <div class="col-12">
+
+        <a [routerLink]="['novo']">
+            <button mat-button class="novo">
+                Criar Álbum</button>
+        </a>
+    </div>
+
+</div>
+
+<mat-divider></mat-divider>
+
+ <div *ngIf="albuns.content.length">
+    <app-album-list [listaAlbum]="albuns?.content"></app-album-list>
+    <app-paginacao (page)="pageClick($event)" [pageIndex]="paginator.pageIndex" [pageSize]="paginator.pageSize"
+        [totalElements]="paginator.totalElements!"></app-paginacao>
+</div> 
+
+<!-- <div *ngIf="!posts.content.length">
+    Sem posts cadastrados
+</div> -->
+
+<mat-divider id="finalPagina"></mat-divider>

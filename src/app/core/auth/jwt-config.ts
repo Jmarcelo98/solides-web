@@ -14,7 +14,7 @@ export const jwtConfig: JwtModuleOptions = {
         allowedDomains: [environment.apiUrl],
         disallowedRoutes: [
             `${environment.apiUrl}/login`,
-            `${environment.apiUrl}/album/todos`,
+            `${environment.apiUrl}/albuns/todos`,
         ],
     },
 };

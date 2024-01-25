@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { VisualizarPostComponent } from './visualizar-post/visualizar-post.component';
 import { MatCardModule } from '@angular/material/card';
 import { ComentarioModule } from 'src/app/shared/components/comentario/comentario.module';
+import { PostVisualizarModule } from 'src/app/shared/components/post-visualizar/post-visualizar.module';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ComentarioModule } from 'src/app/shared/components/comentario/comentari
     PaginacaoModule,
     MatIconModule,
     MatCardModule,
-    ComentarioModule
+    // ComentarioModule
+    PostVisualizarModule
   ]
 })
 export class PostModule { }

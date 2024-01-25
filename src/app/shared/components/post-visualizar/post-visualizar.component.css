@@ -1,0 +1,58 @@
+mat-divider {
+    margin-top: 5px;
+    padding: 10px 20px;
+}
+
+.container {
+    place-content: center;
+    display: flex;
+}
+
+.titulo {
+    margin-top: 10px;
+}
+
+mat-card-content {
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    margin-top: 40px;
+}
+
+.createdFooter {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    display: grid;
+    justify-content: center;
+}
+
+.example-card {
+    width: 75%;
+}
+
+.ml {
+    margin-left: 1px;
+}
+
+img {
+    width: 400px;
+}
+
+.img {
+    align-self: center;
+}
+
+mat-icon {
+    color: rgb(242, 49, 49);
+}
+
+@media only screen and (max-width: 768px) {
+    .example-card {
+        width: 100%;
+    }
+}

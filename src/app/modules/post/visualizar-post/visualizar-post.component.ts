@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,26 +6,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './visualizar-post.component.html',
   styleUrls: ['./visualizar-post.component.css']
 })
-export class VisualizarPostComponent implements OnInit {
+export class VisualizarPostComponent {
 
-  constructor(private activatedRoute: ActivatedRoute, private domSanitizer: DomSanitizer) {
+  constructor(private activatedRoute: ActivatedRoute) {
     this.post = this.activatedRoute.snapshot.data.visualizarPostResolver;
   }
 
   post: any;
-
-  image: any;
-
-  ngOnInit(): void {
-    this.renderizarImg();
-  }
-
-  renderizarImg() {
-    if (this.post.imagem != null) {
-      let objectURL = 'data:image/png;base64,' + this.post.imagem;
-      this.image = this.domSanitizer.bypassSecurityTrustUrl(objectURL);
-    }
-  }
-
 
 }

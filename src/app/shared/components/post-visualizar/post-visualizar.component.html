@@ -1,0 +1,51 @@
+<div class="container">
+
+    <mat-card class="example-card">
+
+        <div class="row ml titulo">
+            <div class="col-10">
+                <mat-card-title title="Título">Titulo</mat-card-title>
+            </div>
+
+            <div class="col-2" *ngIf="post.usuario.id === idUsuario">
+                <button mat-button class="deletar" (click)="deletar(post.id)" title="Excluir post">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="row ml img">
+            <div class="col-12">
+                <img [src]="image">
+            </div>
+        </div>
+
+        <hr>
+
+        <mat-card-content>
+
+            <div class="row">
+                <div> {{post.texto}}</div>
+            </div>
+
+            <div class="row link" *ngIf="post.link != null">
+                <div>Link: <a href="{{post.link}}">{{post.link}}</a></div>
+            </div>
+
+        </mat-card-content>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-actions style="width: 100%;display: inline-block;">
+            <app-comentario [post]="post"></app-comentario>
+        </mat-card-actions>
+
+        <hr *ngIf="post.comentarios.length == 0">
+
+        <span class="createdFooter"><i>Post criado em {{post.dataCriacao | date: 'dd/MM/yyyy'}}
+                por <b> <a href="/usuario/{{post.usuario.login}}">{{post.usuario.login}}</a> </b></i></span>
+
+    </mat-card>
+</div>

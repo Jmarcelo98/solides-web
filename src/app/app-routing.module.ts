@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './core/auth/can-active.service';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
   {
     path: 'post',
     loadChildren: () => import('./modules/post/post.module').then(m => m.PostModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'album',

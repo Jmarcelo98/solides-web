@@ -17,8 +17,6 @@ export class VisualizarPostResolver implements Resolve<Post> {
   constructor(private postService: PostService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Post> {
-    console.log(this.postService.buscarPorId(Number(route.params.id)));
-    
     return this.postService.buscarPorId(Number(route.params.id))
   }
 }

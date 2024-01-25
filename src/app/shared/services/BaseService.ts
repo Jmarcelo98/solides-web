@@ -1,7 +1,5 @@
-// import { HttpParams } from "@angular/common/http";
 import { HttpParams } from "@angular/common/http";
 import { Paginator } from "src/app/core/models/interface/Paginator";
-// import { Paginator } from "src/app/core/Paginator";
 import { environment } from "src/environments/environment";
 
 const baseUrl = environment.apiUrl;

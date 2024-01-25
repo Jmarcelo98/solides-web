@@ -1,0 +1,21 @@
+mat-divider {
+    margin: 45px 35px;
+}
+
+.novo {
+    background-color: var(--cor-terciaria);
+    width: 15em;
+    height: 4em;
+}
+
+.espacoAlbum {
+    margin-bottom: 55px;
+}
+
+a {
+    all: unset
+}
+
+#finalPagina{
+    height: 60px;
+}
