@@ -12,6 +12,48 @@
 
 <mat-divider></mat-divider>
 
+<div class="row">
+
+    <h2>FILTRAR ÁLBUNS</h2>
+
+    <form [formGroup]="formFiltro">
+
+        <div class="row">
+
+            <div class="col-md-8 col-7">
+                <mat-label>Titulo</mat-label>
+                <mat-form-field class="full-width" appearance="outline">
+                    <i matPrefix class="fi fi-rr-envelope mr"></i>
+                    <input matInput name="titulo" formControlName="titulo" placeholder="Ex. A vila é bela">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4 col-5">
+                <mat-label>Somente Meus Álbuns</mat-label>
+                <mat-radio-group class="example-radio-group" formControlName="meusAlbuns">
+                    <mat-radio-button [value]="true">Sim</mat-radio-button>
+                    <mat-radio-button [value]="false">Não</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <button mat-button class="filtrar" (click)="filtrar()"><i class="fi fi-rr-check"></i>Filtrar</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<mat-divider></mat-divider>
+
 <div *ngIf="albuns.content.length">
     <app-album-list [listaAlbum]="albuns?.content"></app-album-list>
     <app-paginacao (page)="pageClick($event)" [pageIndex]="paginator.pageIndex" [pageSize]="paginator.pageSize"

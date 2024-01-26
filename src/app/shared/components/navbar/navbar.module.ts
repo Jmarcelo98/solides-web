@@ -24,8 +24,7 @@ import { MatDividerModule } from '@angular/material/divider';
     CommonModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule,
-    MatDividerModule
+    MatMenuModule
   ]
 })
 export class NavbarModule { }

@@ -24,12 +24,11 @@ export class AlbumResolver implements Resolve<Album[]> {
   }
 
   formFiltro = new FormGroup({
-    texto: new FormControl(null),
-    link: new FormControl(null),
-    id: new FormControl(null),
+    titulo: new FormControl(null),
+    meusAlbuns: new FormControl(null),
   });
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any[]> {
-    return this.albumService.buscarTodos(this.paginator);
+    return this.albumService.buscarTodos(this.formFiltro.getRawValue(),this.paginator);
   }
 }

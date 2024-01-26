@@ -8,6 +8,18 @@ mat-divider {
     height: 4em;
 }
 
+.filtrar {
+    background-color: var(--cor-primaria);
+    color: whitesmoke !important;
+    width: 15%;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: initial;
+    align-items: flex-start;
+}
+
 .espacoAlbum {
     margin-bottom: 55px;
 }

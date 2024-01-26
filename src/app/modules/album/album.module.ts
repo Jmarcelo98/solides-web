@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { AlbumVisualizarComponent } from './album-visualizar/album-visualizar.component';
 import { AlbumNovoComponent } from './album-novo/album-novo.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatRadioModule
   ]
 })
 export class AlbumModule { }

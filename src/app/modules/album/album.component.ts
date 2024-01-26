@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Paginator } from 'src/app/core/models/interface/Paginator';
 import { IPaginator } from 'src/app/shared/components/paginacao/paginacao.component';
@@ -16,6 +17,11 @@ export class AlbumComponent implements OnInit {
     this.albuns = this.activatedRoute.snapshot.data.albumResolver;
   }
 
+  formFiltro = new FormGroup({
+    titulo: new FormControl(null, []),
+    meusAlbuns: new FormControl(null, []),
+  });
+
   albuns: any
 
   paginator: Paginator = {
@@ -24,13 +30,9 @@ export class AlbumComponent implements OnInit {
     pageSize: 4,
   }
 
-  ngOnInit(): void {
-    this.paginator.pageIndex = this.albuns.number;
-    this.paginator.totalElements = this.albuns.totalElements;
-  }
+  filtrar() {
 
-  buscarTodos() {
-    this.albumService.buscarTodos(this.paginator).subscribe(res => {
+    this.albumService.buscarTodos(this.formFiltro.getRawValue(), this.paginator).subscribe(res => {
       this.paginator.pageIndex = res.number;
       this.paginator.totalElements = res.totalElements;
       this.albuns = res
@@ -39,11 +41,18 @@ export class AlbumComponent implements OnInit {
       console.log(err);
 
     })
+
+  }
+
+
+  ngOnInit(): void {
+    this.paginator.pageIndex = this.albuns.number;
+    this.paginator.totalElements = this.albuns.totalElements;
   }
 
   public pageClick(paginator?: IPaginator) {
     this.paginator = paginator!
-    this.buscarTodos();
+    this.filtrar();
   }
 
 }

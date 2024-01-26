@@ -14,9 +14,9 @@ export class AlbumService extends BaseService {
     super("albuns");
   }
 
-  buscarTodos(paginator: IPaginator) {
+  buscarTodos(form: any, paginator: IPaginator) {
     var params = this.setPageToHttpParam(paginator)
-    return this.http.get<any>(`${this.endPoint}/todos`, { params: params });
+    return this.http.post<any>(`${this.endPoint}/todos`, form, { params: params });
   }
 
   criar(form: any) {
