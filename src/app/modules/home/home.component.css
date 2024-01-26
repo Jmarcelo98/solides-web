@@ -1,0 +1,41 @@
+h1 {
+    color: var(--cor-primaria);
+    font-size: xxx-large;
+}
+
+h2 {
+    color: var(--cor-secundaria);
+    margin-left: 45px;
+    margin-top: -15px;
+}
+
+h3 {
+    font-size: xx-large;
+}
+
+mat-divider {
+   margin: 30px 30px;
+}
+
+.conteudo {
+    border: solid 1px var(--cor-terciaria);
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.conteudo,
+p {
+    font-family: monospace
+}
+
+
+@media only screen and (max-width: 768px) {
+    .espacamento {
+        margin-top: 15px;
+    } 
+    .espacamentoMaior {
+        margin-top: 35px;
+
+    }
+}
