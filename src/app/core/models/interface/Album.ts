@@ -1,5 +1,6 @@
 export interface Album {
     id: number;
     titulo: string;
-    fotos: any
+    usuario: any;
+    fotos: any;
 }

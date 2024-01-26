@@ -1,13 +1,33 @@
 <div class="page-container" id="type-income-list">
 
-    <div class="row">
+  <div class="row">
 
-        <div class="col-3" *ngFor="let item of listaAlbum ">
+    <div class="col-3" *ngFor="let item of listaAlbum ">
 
-            <app-album-card [album]="item"></app-album-card>
+      <a [href]="['album/' + item.id]" title="Acessar Álbum">
 
-        </div>
+        <mat-card class="example-card">
+
+          <img *ngIf="item?.fotos.length > 0" [src]="item?.fotos.at(0).imagem">
+
+          <img *ngIf="item?.fotos.length == 0" src="../../../../assets/img/teste.jpg">
+
+          <mat-divider></mat-divider>
+
+          <mat-card-content>
+            <div>
+              <span>{{item.titulo}}</span>
+            </div>
+          </mat-card-content>
+
+        </mat-card>
+
+      </a>
+
+      <!-- <app-album-card [album]="item"></app-album-card> -->
 
     </div>
+
+  </div>
 
 </div>

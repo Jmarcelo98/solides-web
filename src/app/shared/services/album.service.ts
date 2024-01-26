@@ -23,6 +23,10 @@ export class AlbumService extends BaseService {
     return this.http.post(`${this.endPoint}`, form);
   }
 
+  deletar(id: number) {
+    return this.http.delete(`${this.endPoint}/${id}`);
+  }
+
   buscarPorId(id: number): Observable<any> {
     return this.http.get<any>(`${this.endPoint}/${id}`);
   }

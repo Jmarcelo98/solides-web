@@ -1,19 +1,47 @@
-<a [href]="['album/' + album.id]" title="Acessar Álbum">
+<mat-card>
 
-  <mat-card class="example-card">
+  <div class="row ml titulo">
 
-    <img *ngIf="image != undefined" [src]="image">
+    <div class="col-10">
+      <mat-card-title title="Título">{{album.titulo}}</mat-card-title>
+    </div>
 
-    <img *ngIf="image == undefined" src="../../../../assets/img/teste.jpg">
+    <div class="col-2" *ngIf="album.usuario.id === idUsuario">
+      <button mat-button class="deletar" (click)="deletar(album.id)" title="Excluir post">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </div>
+  </div>
 
-    <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
 
-    <mat-card-content>
-      <div>
-        <span>{{album.titulo}}</span>
+  <mat-card-content>
+    <div class="center">
+
+      <div class="carrossel">
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+          <div class="carousel-inner">
+            <div class="carousel-item {{mostrarCarouselSemBugar(i)}}" *ngFor="let item of album.fotos; let i = index">
+              <img [src]="item.imagem">
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
-    </mat-card-content>
 
-  </mat-card>
+    </div>
+  </mat-card-content>
 
-</a>
+</mat-card>

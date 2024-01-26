@@ -16,8 +16,6 @@ export class PostComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
     this.posts = this.activatedRoute.snapshot.data.postResolve;
-    console.log(this.posts);
-    
   }
 
   formFiltro = new FormGroup({

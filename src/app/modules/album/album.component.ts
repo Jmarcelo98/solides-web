@@ -14,8 +14,6 @@ export class AlbumComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) {
     this.albuns = this.activatedRoute.snapshot.data.albumResolver;
-    console.log(this.albuns);
-
   }
 
   albuns: any

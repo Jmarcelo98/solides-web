@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,45 +6,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './album-visualizar.component.html',
   styleUrls: ['./album-visualizar.component.css']
 })
-export class AlbumVisualizarComponent implements OnInit {
+export class AlbumVisualizarComponent {
 
-  constructor(private activatedRoute: ActivatedRoute, private domSanitizer: DomSanitizer) {
+  constructor(private activatedRoute: ActivatedRoute) {
     this.album = this.activatedRoute.snapshot.data.visualizarAlbumResolver;
   }
 
-  active = "active"
-
   album: any;
-
-  idUsuario: any
-
-  ngOnInit(): void {
-    this.renderizarImg();
-    console.log(this.album);
-    
-  }
-
-  mostrarCarouselSemBugar(id: number): string {
-    if(id == 0 ) {
-      return "active";
-    } 
-    return "";
-  }
-
-  deletar(id: number) {
-
-  }
-
-  renderizarImg() {
-
-    for (let o of this.album.fotos) {
-
-      let objectURL = 'data:image/png;base64,' + o.imagem;
-
-      o.imagem = this.domSanitizer.bypassSecurityTrustUrl(objectURL);
-
-    }
-
-  }
 
 }

@@ -1,19 +1,46 @@
-mat-card {
-    max-height: 350px;
-    min-height: 300px;
-}
-
-a {
-    all: unset;
-    cursor: pointer;
-}
-
-mat-divider {
-    margin-top: 15px;
-}
-
 img {
-    margin-top: 15px;
-    max-width: 250px;
-    align-self: center;
+    width: 500px;
+}
+
+.ml {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+mat-icon {
+    color: rgb(242, 49, 49);
+}
+
+.carousel-control-prev-icon:after {
+    color: var(--cor-primaria);
+    content: '<';
+    background-image: none;
+    font-size: 50px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-control-next-icon:after {
+    color: var(--cor-primaria);
+    content: '>';
+    background-image: none;
+    font-size: 50px;
+    margin-top: 150px;
+    /*put your desired top margin*/
+}
+
+.carousel-control-next {
+    right: -50px;
+}
+
+.carousel-control-prev {
+    left: -50px;
+}
+
+.carrossel {
+    width: 600px;
+    text-align: center
 }
