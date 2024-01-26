@@ -12,7 +12,7 @@
 
 <mat-divider></mat-divider>
 
-<div class="row">
+<div class="row" *ngIf="logado">
 
     <h2>FILTRAR ÁLBUNS</h2>
 
@@ -52,7 +52,7 @@
 
 </div>
 
-<mat-divider></mat-divider>
+<mat-divider *ngIf="logado"></mat-divider>
 
 <div *ngIf="albuns.content.length">
     <app-album-list [listaAlbum]="albuns?.content"></app-album-list>

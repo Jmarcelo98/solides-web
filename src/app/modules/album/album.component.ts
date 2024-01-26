@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { AuthGuardService } from 'src/app/core/auth/can-active.service';
 import { Paginator } from 'src/app/core/models/interface/Paginator';
 import { IPaginator } from 'src/app/shared/components/paginacao/paginacao.component';
 import { AlbumService } from 'src/app/shared/services/album.service';
@@ -13,7 +14,8 @@ import { AlbumService } from 'src/app/shared/services/album.service';
 export class AlbumComponent implements OnInit {
 
 
-  constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) {
+  constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService,
+    private authGuardService: AuthGuardService) {
     this.albuns = this.activatedRoute.snapshot.data.albumResolver;
   }
 
@@ -23,6 +25,8 @@ export class AlbumComponent implements OnInit {
   });
 
   albuns: any
+
+  logado: boolean
 
   paginator: Paginator = {
     pageIndex: 0,
@@ -44,8 +48,8 @@ export class AlbumComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
+    this.logado = this.authGuardService.isUsuarioAuthenticated()
     this.paginator.pageIndex = this.albuns.number;
     this.paginator.totalElements = this.albuns.totalElements;
   }

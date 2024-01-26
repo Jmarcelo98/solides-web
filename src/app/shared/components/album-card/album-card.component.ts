@@ -28,7 +28,12 @@ export class AlbumCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.renderizarImg()
-    this.idUsuario = this.token.decodePayloadJWT().id;
+
+    let decode = this.token.decodePayloadJWT();
+
+    if (decode != null) {
+      this.idUsuario = this.token.decodePayloadJWT().id;
+    }
 
   }
 

@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: ':id',
     component: AlbumVisualizarComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     resolve: {
       visualizarAlbumResolver: AlbumVisualizarResolver
     }
