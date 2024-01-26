@@ -13,6 +13,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PaginacaoModule } from 'src/app/shared/components/paginacao/paginacao.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
 import { PostCardModule } from 'src/app/shared/components/post-card/post-card.module';
 import { PostVisualizarComponent } from './post-visualizar/post-visualizar.component';
 import { PostNovoComponent } from './post-novo/post-novo.component';
@@ -38,7 +39,8 @@ import { PostNovoComponent } from './post-novo/post-novo.component';
     PaginacaoModule,
     MatIconModule,
     MatCardModule,
-    PostCardModule
+    PostCardModule,
+    MatRadioModule
   ]
 })
 export class PostModule { }

@@ -27,6 +27,7 @@ export class PostResolver implements Resolve<Post[]> {
     texto: new FormControl(null),
     link: new FormControl(null),
     id: new FormControl(null),
+    meusPost: new FormControl(null)
   });
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any[]> {

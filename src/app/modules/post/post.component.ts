@@ -22,6 +22,7 @@ export class PostComponent implements OnInit {
     texto: new FormControl(null, []),
     link: new FormControl(null, []),
     id: new FormControl(null, []),
+    meusPost: new FormControl(null, []),
   });
 
   paginator: Paginator = {

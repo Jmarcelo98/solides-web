@@ -18,7 +18,7 @@
 
         <div class="row">
 
-            <div class="col-md-5 col-12">
+            <div class="col-md-6 col-12">
                 <mat-label>Texto</mat-label>
                 <mat-form-field class="full-width" appearance="outline">
                     <i matPrefix class="fi fi-rr-envelope mr"></i>
@@ -26,7 +26,7 @@
                 </mat-form-field>
             </div>
 
-            <div class="col-md-5 col-12">
+            <div class="col-md-6 col-12">
                 <mat-label>Link</mat-label>
                 <mat-form-field class="full-width" appearance="outline">
                     <i matPrefix class="fi fi-rr-envelope mr"></i>
@@ -34,6 +34,9 @@
                 </mat-form-field>
             </div>
 
+        </div>
+
+        <div class="row">
 
             <div class="col-md-2 col-6">
                 <mat-label>Id</mat-label>
@@ -41,6 +44,14 @@
                     <i matPrefix class="fi fi-rr-envelope mr"></i>
                     <input matInput name="id" formControlName="id" placeholder="Ex. 1">
                 </mat-form-field>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <mat-label>Somente Meus Posts</mat-label>
+                <mat-radio-group class="example-radio-group" formControlName="meusPost">
+                    <mat-radio-button [value]="true">Sim</mat-radio-button>
+                    <mat-radio-button [value]="false">Não</mat-radio-button>
+                </mat-radio-group>
             </div>
 
         </div>
