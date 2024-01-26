@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './core/auth/can-active.service';
+import { NaoEncontradoComponent } from './modules/nao-encontrado/nao-encontrado.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,15 @@ const routes: Routes = [
   {
     path: 'cadastro',
     loadChildren: () => import('./modules/cadastro/cadastro.module').then(m => m.CadastroModule),
-  }
+  },
+  {
+    path: '',
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./modules/nao-encontrado/nao-encontrado.module').then(m => m.NaoEncontradoModule),
+  },
 ];
 
 @NgModule({
