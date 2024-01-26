@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService } from './BaseService';
 import { HttpClient } from '@angular/common/http';
 import { IPaginator } from '../components/paginacao/paginacao.component';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -20,6 +21,10 @@ export class AlbumService extends BaseService {
 
   criar(form: any) {
     return this.http.post(`${this.endPoint}`, form);
+  }
+
+  buscarPorId(id: number): Observable<any> {
+    return this.http.get<any>(`${this.endPoint}/${id}`);
   }
 
 }

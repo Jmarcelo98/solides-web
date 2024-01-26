@@ -12,7 +12,7 @@
 }
 
 .removerFoto {
-    display: contents;
+    position: absolute;
     color: black;
 }
 

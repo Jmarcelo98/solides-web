@@ -9,19 +9,20 @@ import { AlbumListComponent } from './album-list/album-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AlbumCardModule } from 'src/app/shared/components/album-card/album-card.module';
 import { PaginacaoModule } from 'src/app/shared/components/paginacao/paginacao.module';
-import { NovoAlbumComponent } from './novo-album/novo-album.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { AlbumVisualizarComponent } from './album-visualizar/album-visualizar.component';
+import { AlbumNovoComponent } from './album-novo/album-novo.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
     AlbumComponent,
     AlbumListComponent,
-    NovoAlbumComponent,
-    AlbumVisualizarComponent
+    AlbumVisualizarComponent,
+    AlbumNovoComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +35,8 @@ import { AlbumVisualizarComponent } from './album-visualizar/album-visualizar.co
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ]
 })
 export class AlbumModule { }

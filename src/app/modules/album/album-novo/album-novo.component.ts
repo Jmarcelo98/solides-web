@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AlbumService } from 'src/app/shared/services/album.service';
 
 @Component({
-  selector: 'app-novo-album',
-  templateUrl: './novo-album.component.html',
-  styleUrls: ['./novo-album.component.css']
+  selector: 'app-album-novo',
+  templateUrl: './album-novo.component.html',
+  styleUrls: ['./album-novo.component.css']
 })
-export class NovoAlbumComponent implements OnInit {
+export class AlbumNovoComponent implements OnInit {
 
   formAlbum: FormGroup;
 

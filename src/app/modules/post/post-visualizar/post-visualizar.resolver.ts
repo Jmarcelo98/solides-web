@@ -12,7 +12,7 @@ import { PostService } from 'src/app/shared/services/post.service';
   providedIn: 'root'
 })
 
-export class VisualizarPostResolver implements Resolve<Post> {
+export class PostVisualizarResolver implements Resolve<Post> {
 
   constructor(private postService: PostService) { }
 

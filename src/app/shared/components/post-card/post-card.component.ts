@@ -7,11 +7,11 @@ import { ConfirmacaoDialogComponent } from '../confirmacao-dialog/confirmacao-di
 import { TokenStorageService } from 'src/app/core/auth/token-storage.service';
 
 @Component({
-  selector: 'app-post-visualizar',
-  templateUrl: './post-visualizar.component.html',
-  styleUrls: ['./post-visualizar.component.css']
+  selector: 'app-post-card',
+  templateUrl: './post-card.component.html',
+  styleUrls: ['./post-card.component.css']
 })
-export class PostVisualizarComponent {
+export class PostCardComponent {
 
   constructor(private domSanitizer: DomSanitizer,
     public confirmacao: MatDialog, private postService: PostService, private route: Router,

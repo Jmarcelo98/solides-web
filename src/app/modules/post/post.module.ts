@@ -10,21 +10,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { PostListComponent } from './post-list/post-list.component';
-import { NovoPostComponent } from './novo-post/novo-post.component';
 import { PaginacaoModule } from 'src/app/shared/components/paginacao/paginacao.module';
 import { MatIconModule } from '@angular/material/icon';
-import { VisualizarPostComponent } from './visualizar-post/visualizar-post.component';
 import { MatCardModule } from '@angular/material/card';
-import { ComentarioModule } from 'src/app/shared/components/comentario/comentario.module';
-import { PostVisualizarModule } from 'src/app/shared/components/post-visualizar/post-visualizar.module';
+import { PostCardModule } from 'src/app/shared/components/post-card/post-card.module';
+import { PostVisualizarComponent } from './post-visualizar/post-visualizar.component';
+import { PostNovoComponent } from './post-novo/post-novo.component';
 
 
 @NgModule({
   declarations: [
     PostComponent,
     PostListComponent,
-    NovoPostComponent,
-    VisualizarPostComponent
+    PostNovoComponent,
+    PostVisualizarComponent
   ],
   imports: [
     CommonModule,
@@ -39,8 +38,7 @@ import { PostVisualizarModule } from 'src/app/shared/components/post-visualizar/
     PaginacaoModule,
     MatIconModule,
     MatCardModule,
-    // ComentarioModule
-    PostVisualizarModule
+    PostCardModule
   ]
 })
 export class PostModule { }

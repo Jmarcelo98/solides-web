@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post.service';
 
 @Component({
-  selector: 'app-novo-post',
-  templateUrl: './novo-post.component.html',
-  styleUrls: ['./novo-post.component.css']
+  selector: 'app-post-novo',
+  templateUrl: './post-novo.component.html',
+  styleUrls: ['./post-novo.component.css']
 })
-export class NovoPostComponent {
+export class PostNovoComponent {
 
   constructor(private postService: PostService, private route: Router) { }
 

@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AlbumComponent } from './album.component';
 import { AlbumResolver } from './album.resolver';
-import { NovoAlbumComponent } from './novo-album/novo-album.component';
 import { AuthGuardService } from 'src/app/core/auth/can-active.service';
 import { AlbumVisualizarComponent } from './album-visualizar/album-visualizar.component';
+import { AlbumNovoComponent } from './album-novo/album-novo.component';
+import { AlbumVisualizarResolver } from './album-visualizar/album-visualizar.resolver';
 
 const routes: Routes = [
   {
@@ -16,13 +17,16 @@ const routes: Routes = [
   },
   {
     path: 'novo',
-    component: NovoAlbumComponent,
+    component: AlbumNovoComponent,
     canActivate: [AuthGuardService]
   },
   {
     path: ':id',
     component: AlbumVisualizarComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService],
+    resolve: {
+      visualizarAlbumResolver: AlbumVisualizarResolver
+    }
   }
 ];
 
